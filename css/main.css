@@ -1,0 +1,65 @@
+body{
+    background-color: black;
+}
+
+
+
+.list{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0px;
+    justify-content: space-between;
+
+    
+}
+
+form{
+ 
+    padding-top: 30px;
+    text-align: center;
+}
+
+select{
+    
+    width: 30%;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+
+.form__button{
+font-size: 20px;
+padding: 10px 15px;
+border-radius: 3px;
+margin-left: 20px;
+border: 0px;
+}
+.list__item{
+    width: 250px;
+    color: aliceblue;
+    
+
+    
+   
+}
+
+.list__img{
+    width: 250px;
+   
+}
+
+.form-select__select{
+    width: 20%;
+    display: block;
+    font-size: 25px;
+    border-radius: 5px;
+    background-color: aquamarine;
+    padding: 5;
+    padding-left: 10px;
+    
+   
+}
+
