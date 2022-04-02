@@ -58,8 +58,8 @@ function renderFilms(arr, element){
     newImg.setAttribute("class", "list__img");
     newText.setAttribute("class", "list__text");
     newBtn.setAttribute("class" , "list__bnt");
-    // newTime.setAttribute("datetime", "2022-03-12");D
-     var newBtnDataset = newBtn.dataset.filmid = film.id;
+    // newTime.setAttribute("datetime", "2022-03-12");
+    var newBtnDataset = newBtn.dataset.filmid = film.id;
 
 
 
@@ -159,7 +159,12 @@ elList.addEventListener("click" , evt =>{
 
    const btnfind = films.find( e => e.id === btnid );
 
-   NewBtnArray.push(btnfind);
+   if(!NewBtnArray.includes(btnfind)){
+    
+      NewBtnArray.push(btnfind);
+   }
+   
+    
    console.log(NewBtnArray);
 
  if(!NewBtnArray.includes(btnfind)){
@@ -189,12 +194,12 @@ elSecondList.addEventListener("click" , evt =>{
      NewBtnArray.splice(btnfindd , 1);
 
 
- 
+  
+newul(NewBtnArray , elSecondList)
    }
 
    
 
-newul(NewBtnArray , elSecondList)
   });
 
 
