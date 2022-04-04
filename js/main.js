@@ -1,7 +1,7 @@
 var elList = document.querySelector(".list");
 var elSecondList = document.querySelector(".second-list");
 
-let elInput = document.querySelector(".form__input");
+// let elInput = document.querySelector(".form__input");
 
 let NewBtnArray =[];
 
@@ -87,18 +87,18 @@ form.addEventListener("submit", evt =>{
   const selectVal = select.value;
 
 
-  const inputVal = elInput.value
+  // let inputVal = elInput.value;
 
   let filterFilms = selectVal == "all" ? films : films.filter(element => element.genres.includes(selectVal))  ;
 
 
-  if(  films.genres ==  inputVal  ){
+  // if(  films.genres ==  inputVal  ){
 
-    films.filter(element => element.genres.includes(inputVal))
+  //   films.filter(element => element.genres.includes(inputVal))
 
 
 
-  }
+  // }
 
   // if(selectVal === "all"){
   //   filterFilms = films;
