@@ -3,8 +3,12 @@ var elSecondList = document.querySelector(".second-list");
 
 // let elInput = document.querySelector(".form__input");
 
-let NewBtnArray =[];
+const Local = JSON.parse(window.localStorage.getItem("List"));
 
+
+let NewBtnArray = Local || [];
+
+newul(NewBtnArray , elSecondList);
 
 
 function renderGenes(arr , element){
@@ -28,6 +32,7 @@ function renderGenes(arr , element){
   })
 
 }
+
 
 function renderFilms(arr, element){
   element.innerHTML = "";
@@ -90,6 +95,8 @@ form.addEventListener("submit", evt =>{
   // let inputVal = elInput.value;
 
   let filterFilms = selectVal == "all" ? films : films.filter(element => element.genres.includes(selectVal))  ;
+  window.localStorage.setItem("form" , JSON.stringify(films));
+  
 
 
   // if(  films.genres ==  inputVal  ){
@@ -109,7 +116,11 @@ form.addEventListener("submit", evt =>{
 
 
   renderFilms(filterFilms, elList);
-
+ 
+  
+ const ArrayLocalStorage = JSON.parse(window.localStorage.getItem("form"));
+elList.push(ArrayLocalStorage);
+// renderFilms(filterFilms , elList);
 
 });
 
@@ -179,8 +190,13 @@ elList.addEventListener("click" , evt =>{
 
 
 
-newul(NewBtnArray , elSecondList)
+newul(NewBtnArray , elSecondList);
+
+window.localStorage.setItem("List" , JSON.stringify(NewBtnArray));
+
+
 });
+
 
 elSecondList.addEventListener("click" , evt =>{
 
@@ -196,11 +212,14 @@ elSecondList.addEventListener("click" , evt =>{
 
   
 newul(NewBtnArray , elSecondList)
+
+    window.localStorage.setItem("List" , JSON.stringify(NewBtnArray));
    }
 
    
 
   });
+
 
 
 
